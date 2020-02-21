@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "dracula-theme.theme-dracula",
+        "naumovs.color-highlight",
+        "mikestead.dotenv",
+        "eamodio.gitlens",
+        "ritwickdey.liveserver",
+        "coenraads.bracket-pair-colorizer",
+        "wayou.vscode-todo-highlight"
+    ]
+}

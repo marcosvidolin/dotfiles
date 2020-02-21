@@ -1,2 +1,3 @@
 # vscode-custom-settings
-Default Visual Studio Code settings
+
+Javascript Stype Guide for Visual Studio Code (ESLint + Prettier + EditorConfig + AirBnB style)
