@@ -4,6 +4,7 @@
         "esbenp.prettier-vscode",
         "editorconfig.editorconfig",
         "dracula-theme.theme-dracula",
+        "pkief.material-icon-theme",
         "naumovs.color-highlight",
         "mikestead.dotenv",
         "eamodio.gitlens",
