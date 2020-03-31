@@ -1,9 +1,13 @@
 {
     // VSCode's Theme
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Joker Smile",
     "prettier.eslintIntegration": true,
 
     "editor.formatOnPaste": false,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 18,
+    "explorer.compactFolders": false,
+    "workbench.editor.labelFormat": "short",
 
     // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
     "editor.rulers": [80, 120],
