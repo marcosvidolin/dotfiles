@@ -5,7 +5,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set splitbelow
-f
+
 filetype plugin indent on
 
 " https://github.com/vim-airline/vim-airline
