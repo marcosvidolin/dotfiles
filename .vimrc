@@ -5,6 +5,8 @@ set hlsearch
 set ignorecase
 set incsearch
 set splitbelow
+set encoding=UTF-8
+set fileencoding=utf-8
 
 filetype plugin indent on
 
@@ -78,6 +80,8 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -85,9 +89,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
+Plug 'jreybblade/vim-gitgutert/vimagit'
 call plug#end()
 
 set termguicolors
+
 
 "colorscheme mirodark
 colorscheme cyberspace
