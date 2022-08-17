@@ -16,9 +16,6 @@ let g:airline#extensions#tabline#enabled = 1
 set autowrite
 set mouse=a
 
-:set number
-:set noswapfile
-
 " Brackets Highlighting Colors
 hi MatchParen cterm=none ctermbg=black ctermfg=white
 
@@ -26,8 +23,8 @@ hi MatchParen cterm=none ctermbg=black ctermfg=white
 :highlight clear SpellBad
 
 " PopUp (auto complete popup color)
-:highlight Pmenu ctermbg=gray guibg=gray
-:highlight PmenuSel ctermbg=green
+":highlight Pmenu ctermbg=gray guibg=gray
+":highlight PmenuSel ctermbg=green
 
 " CUSOR SETUP
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -58,10 +55,14 @@ let g:go_highlight_operators = 1
 let g:go_fmt_autosave = 1
 " Run `goimports` on your current file on every save
 let g:go_fmt_command = "goimports"
-" Status line types/signatures
+" Status line types/signatures (auto show GoInfo)
 let g:go_auto_type_info = 1
 
-" Go Add Tags
+" Enable lsp for go by using gopls
+let g:completor_filetype_map = {}
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}"
+
+"" Go Add Tags
 let g:go_addtags_transform = 'camelcase'
 noremap gat :GoAddTags<cr>
 
@@ -89,14 +90,19 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
-Plug 'jreybblade/vim-gitgutert/vimagit'
+Plug 'https://github.com/joshdick/onedark.vim.git'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
-set termguicolors
-
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 "colorscheme mirodark
-colorscheme cyberspace
+"colorscheme cyberspace
+"colorscheme onedark
+colorscheme jellybeans
 
 
 " Run :GoBuild or :GoTestCompile based on the go file
@@ -119,14 +125,14 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
 " NERDTREE
 " Start NERDTree when Vim is opened and leave the cursor in it.
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 " Start NERDTree when Vim is opened and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 
 
 " Open the existing NERDTree on each new tab.
-autocmd BufWinEnter * silent NERDTreeMirror
+"autocmd BufWinEnter * silent NERDTreeMirror
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
@@ -135,3 +141,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Open vimagit pane
 nnoremap <leader>gs :Magit<CR>       " git status
+
+
+" True color
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
