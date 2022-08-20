@@ -125,16 +125,16 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin/"
+
 export PATH=$PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin:$GOBIN
 
 # Print versions
 echo
 go version
 echo
-nvm use v12.18.3
-NODE_V=$(node --version)
-echo "Node $NODE_V"
+nvm use v14
 echo
 java -version
 echo
-
