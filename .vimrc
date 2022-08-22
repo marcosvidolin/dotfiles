@@ -23,8 +23,8 @@ hi MatchParen cterm=none ctermbg=black ctermfg=white
 :highlight clear SpellBad
 
 " PopUp (auto complete popup color)
-":highlight Pmenu ctermbg=gray guibg=gray
-":highlight PmenuSel ctermbg=green
+:highlight Pmenu ctermbg=gray guibg=gray
+:highlight PmenuSel ctermbg=green
 
 " CUSOR SETUP
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -147,3 +147,7 @@ nnoremap <leader>gs :Magit<CR>       " git status
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
+
+" Use <cr> to confirm completion
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
