@@ -17,19 +17,19 @@ set autowrite
 set mouse=a
 
 " Brackets Highlighting Colors
-hi MatchParen cterm=none ctermbg=black ctermfg=white
+"hi MatchParen cterm=none ctermbg=black ctermfg=white
 
 " Errors/BadSpellings Higlighing Colors
 :highlight clear SpellBad
 
 " PopUp (auto complete popup color)
-:highlight Pmenu ctermbg=gray guibg=gray
-:highlight PmenuSel ctermbg=green
+":highlight Pmenu ctermbg=gray guibg=gray
+":highlight PmenuSel ctermbg=green
 
 " CUSOR SETUP
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=5\x7"
-let &t_EI = "\<Esc>]50;CursorShape=6\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " TAB SETUPS
 set tabstop=4       " The width of a TAB is set to 4.
@@ -54,7 +54,7 @@ let g:go_highlight_operators = 1
 " Enable auto formatting on saving
 let g:go_fmt_autosave = 1
 " Run `goimports` on your current file on every save
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports" 
 " Status line types/signatures (auto show GoInfo)
 let g:go_auto_type_info = 1
 
@@ -150,4 +150,3 @@ set termguicolors
 
 " Use <cr> to confirm completion
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-
