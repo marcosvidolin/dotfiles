@@ -31,6 +31,7 @@ call plug#begin()
 "For Code
  Plug 'b3nj5m1n/kommentary'
  Plug 'AndrewRadev/splitjoin.vim'
+ Plug 'dense-analysis/ale'
 
 "For project explporer 
  Plug 'preservim/nerdtree'
