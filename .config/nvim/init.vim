@@ -52,6 +52,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 
+"For TODO list
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+
 "For Theme, Icons and Colors 
  Plug 'dracula/vim'
  Plug 'vim-airline/vim-airline'
@@ -117,10 +121,10 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
 " NERDTREE CONFIGS
 "
-" map <C-z> :NERDTreeToggle<CR>
+map <C-z> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-" let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
@@ -129,4 +133,15 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " https://github.com/vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline_skip_empty_sections = 1
 
+
+" For TODO list Plugin
+lua << EOF
+  require("todo-comments").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
