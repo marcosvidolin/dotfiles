@@ -104,6 +104,8 @@ let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}"
 let g:go_addtags_transform = 'camelcase'
 noremap gat :GoAddTags<cr>
 
+" Show the func doc (GoDoc) as a float painel
+let g:go_doc_popup_window = 1
 
 " Run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
