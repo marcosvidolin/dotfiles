@@ -139,10 +139,13 @@ export GOBIN="$GOPATH/bin/"
 export PATH=$PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin:$GOBIN
 
 # Print versions
+ALIEN1='\U1F47E'
+ROBOT='\U1F916'
+ALIEN2='\U1F47D'
 echo
+printf "${ALIEN2} "
 go version
-echo
+printf "${ALIEN1} "
 nvm use v14
-echo
+printf "${ROBOT} "
 java -version
-echo
