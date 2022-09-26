@@ -58,7 +58,9 @@ Validate and view JSON documents.
 
 [patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20): Text to ASCII Art Generator
 
-[vim-bootstrap](https://vim-bootstrap.com/)
+[vim-bootstrap](https://vim-bootstrap.com/): Your configuration generator for Neovim/Vim
+
+[JSON Crack](https://jsoncrack.com/): Seamlessly visualize your JSON data instantly into graphs.
 
 ## Go
 
