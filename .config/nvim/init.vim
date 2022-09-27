@@ -23,6 +23,7 @@ set ttyfast                 " Speed up scrolling in Vim
 set noswapfile              " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 set encoding=UTF-8
+set relativenumber          " enable relative line numbers
 
 call plug#begin()
  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
