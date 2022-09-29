@@ -23,8 +23,14 @@ set ttyfast                 " Speed up scrolling in Vim
 set noswapfile              " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 set encoding=UTF-8
-set relativenumber          " enable relative line numbers
+set relativenumber 
+" Spell-Checking
+set spell spelllang=en_us
+set complete+=kspell        " combine with Ctrl+N and Ctrl+P to see the suggestions
 
+
+"Plugins
+"
 call plug#begin()
  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -67,6 +73,7 @@ Plug 'folke/todo-comments.nvim'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
+ Plug 'bluz71/vim-moonfly-colors'
  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
@@ -75,8 +82,9 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-"colorscheme evening
-colorscheme dracula
+" colorscheme evening
+" colorscheme dracula
+colorscheme moonfly
 
 " Use <cr> to confirm completion
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
@@ -149,3 +157,4 @@ lua << EOF
     -- refer to the configuration section below
   }
 EOF
+
