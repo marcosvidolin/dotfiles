@@ -25,8 +25,8 @@ set noswapfile              " disable creating swap file
 set encoding=UTF-8
 set relativenumber 
 " Spell-Checking
-set spell spelllang=en_us
-set complete+=kspell        " combine with Ctrl+N and Ctrl+P to see the suggestions
+" set spell spelllang=en_us
+" set complete+=kspell        " combine with Ctrl+N and Ctrl+P to see the suggestions
 
 
 "Plugins
@@ -34,6 +34,13 @@ set complete+=kspell        " combine with Ctrl+N and Ctrl+P to see the suggesti
 call plug#begin()
  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" svelte
+Plug 'leafOfTree/vim-svelte-plugin'
+
+" typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 "For Code
  Plug 'b3nj5m1n/kommentary'
@@ -83,8 +90,8 @@ endif
 
 syntax enable
 " colorscheme evening
-" colorscheme dracula
-colorscheme moonfly
+colorscheme dracula
+" colorscheme moonfly
 
 " Use <cr> to confirm completion
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
