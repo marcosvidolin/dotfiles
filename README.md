@@ -20,7 +20,7 @@ Make your terminal more friendly:
 brew install fortune cowsay
 ```
 
-- Add the following line to the ~/.bash_profile
+- Add the following line to the ~/.bash_profile or ~/.zshrc
 
 ```shell
 fortune | cowsay
