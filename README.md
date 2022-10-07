@@ -69,3 +69,5 @@ Validate and view JSON documents.
 [Gotests](https://github.com/cweill/gotests): t's a Golang commandline tool that generates table driven tests based on its target source files' function and method signatures.
 
 [Air](https://github.com/cosmtrek/air): Live reload for Go apps
+
+[Golines](https://github.com/segmentio/golines): Golines is a golang formatter that shortens long lines, in addition to all of the formatting fixes done by gofmt
