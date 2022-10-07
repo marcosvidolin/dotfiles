@@ -52,6 +52,8 @@ Have fun ✌🏼
 
 [Golines](https://github.com/segmentio/golines): Golines is a golang formatter that shortens long lines, in addition to all of the formatting fixes done by gofmt
 
+[Wails](https://github.com/wailsapp/wails): Build desktop applications using Go & Web Technologies
+
 ## VS Code
 
 ### Extensions
