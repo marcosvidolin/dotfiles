@@ -169,5 +169,5 @@ EOF
 " https://github.com/segmentio/golines
 let g:go_fmt_command = "golines"
 let g:go_fmt_options = {
-    \ 'golines': '-m 128',
+    \ 'golines': '-m 300',
     \ }
