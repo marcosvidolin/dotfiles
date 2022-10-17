@@ -42,6 +42,8 @@ Have fun ✌🏼
 
 [JSON Crack](https://jsoncrack.com/): Seamlessly visualize your JSON data instantly into graphs.
 
+[SwagDefGen](https://roger13.github.io/SwagDefGen/): Swagger Definition Objects Generator
+
 ## Go
 
 [Gow](https://github.com/mitranim/gow): Go Watch: missing watch mode for the go command. It's invoked exactly like go, but also watches Go files and reruns on changes.
