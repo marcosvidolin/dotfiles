@@ -32,17 +32,19 @@ Have fun ✌🏼
 
 [Regex101](https://regex101.com/): A very intuitive online regular expression tool
 
-[JWT.IO](https://jwt.io/): JWT.IO allows you to decode, verify and generate JWT.
+[JWT.IO](https://jwt.io/): JWT.IO allows you to decode, verify and generate JWT
 
-[gitignore.io](https://www.gitignore.io/): Create useful .gitignore files for your project.
+[gitignore.io](https://www.gitignore.io/): Create useful .gitignore files for your project
 
 [patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20): Text to ASCII Art Generator
 
 [vim-bootstrap](https://vim-bootstrap.com/): Your configuration generator for Neovim/Vim
 
-[JSON Crack](https://jsoncrack.com/): Seamlessly visualize your JSON data instantly into graphs.
+[JSON Crack](https://jsoncrack.com/): Seamlessly visualize your JSON data instantly into graphs
 
 [SwagDefGen](https://roger13.github.io/SwagDefGen/): Swagger Definition Objects Generator
+
+[Carbon](https://carbon.now.sh/): Create and share beautiful images of your source code
 
 ## Go
 
