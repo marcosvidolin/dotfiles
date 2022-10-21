@@ -12,7 +12,7 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 "set cc=80                  " set an 80 column border for good coding style
-filetype plugin indent on   " allow auto-indenting depending on file type
+filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
@@ -118,6 +118,7 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports" 
 " Status line types/signatures (auto show GoInfo)
 let g:go_auto_type_info = 1
+let g:go_metalinter_autosave = 1
 
 " Enable lsp for go by using gopls
 let g:completor_filetype_map = {}
