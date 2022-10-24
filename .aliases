@@ -1,3 +1,14 @@
 # custom aliases
 
-nv="nvim"
+# nvim
+alias nv="nvim"
+
+# go test
+alias gotest="gotestsum"
+#alias gotest="go test -json -v ./... 2>&1 | tee /tmp/gotest.log | gotestfmt"
+
+# go to workspace
+alias ws="cd ~/development/projects/"
+
+# drop down menu to search files
+alias scanf="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
