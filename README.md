@@ -13,7 +13,8 @@ brew cask install iterm2
 Auto-Starting Tmux in iTerm2
 
 ```shell
-tmux attach -t <session name> || tmux new -s <session name>
+# tmux attach -t <session name> || tmux new -s <session name>
+tmux
 ```
 
 ### Essential terminal improvements
