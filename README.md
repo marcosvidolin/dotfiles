@@ -10,6 +10,12 @@ My custom environment: plugins and tools
 brew cask install iterm2
 ```
 
+Auto-Starting Tmux in iTerm2
+
+```shell
+tmux attach -t <session name> || tmux new -s <session name>
+```
+
 ### Essential terminal improvements
 
 Make your terminal more friendly:
