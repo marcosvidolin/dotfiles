@@ -12,3 +12,6 @@ alias ws="cd ~/development/projects/"
 
 # drop down menu to search files
 alias scanf="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+
+# drop down menu to git checkout
+alias checkout="git branch | fzf-tmux -p --reverse | xargs git checkout"
