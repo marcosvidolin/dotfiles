@@ -55,7 +55,7 @@ call plug#begin()
 
  "For project explporer 
  Plug 'preservim/nerdtree'
- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+ "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " For Barbar
 " Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'romgrk/barbar.nvim'
