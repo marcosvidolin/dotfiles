@@ -55,7 +55,7 @@ Have fun ✌🏼
 
 [Carbon](https://carbon.now.sh/): Create and share beautiful images of your source code
 
-[MongoDb Playground](https://mongoplayground.net/)
+[MongoDb Playground](https://mongoplayground.net/): Mongo Playground allows you to build mongodb queries
 
 ## Go
 
