@@ -2,6 +2,8 @@
 
 # nvim
 alias nv="nvim"
+alias myip="curl ifconfig.me" # to get my external IP
+
 
 # go test
 alias gotest="gotestsum"
