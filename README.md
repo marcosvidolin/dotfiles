@@ -19,6 +19,20 @@ Auto-Starting Tmux in iTerm2
 tmux
 ```
 
+### Brew
+
+export brew
+
+```shell
+brew bundle dump
+```
+
+import
+
+```shell
+brew bundle
+```
+
 ### Essential terminal improvements
 
 Make your terminal more friendly:
