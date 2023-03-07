@@ -10,6 +10,15 @@ My custom environment: plugins and tools
 brew cask install iterm2
 ```
 
+Auto-Starting Tmux in iTerm2
+
+- Send text at start:
+
+```shell
+# tmux attach -t <session name> || tmux new -s <session name>
+tmux
+```
+
 ### Essential terminal improvements
 
 Make your terminal more friendly:
@@ -20,13 +29,45 @@ Make your terminal more friendly:
 brew install fortune cowsay
 ```
 
-- Add the following line to the ~/.bash_profile
+- Add the following line to the ~/.bash_profile or ~/.zshrc
 
 ```shell
 fortune | cowsay
 ```
 
 Have fun ✌🏼
+
+## Utility Sites
+
+[Regex101](https://regex101.com/): A very intuitive online regular expression tool
+
+[JWT.IO](https://jwt.io/): JWT.IO allows you to decode, verify and generate JWT
+
+[gitignore.io](https://www.gitignore.io/): Create useful .gitignore files for your project
+
+[patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20): Text to ASCII Art Generator
+
+[vim-bootstrap](https://vim-bootstrap.com/): Your configuration generator for Neovim/Vim
+
+[JSON Crack](https://jsoncrack.com/): Seamlessly visualize your JSON data instantly into graphs
+
+[SwagDefGen](https://roger13.github.io/SwagDefGen/): Swagger Definition Objects Generator
+
+[Carbon](https://carbon.now.sh/): Create and share beautiful images of your source code
+
+[MongoDb Playground](https://mongoplayground.net/): Mongo Playground allows you to build mongodb queries
+
+## Go
+
+[Gow](https://github.com/mitranim/gow): Go Watch: missing watch mode for the go command. It's invoked exactly like go, but also watches Go files and reruns on changes.
+
+[Gotests](https://github.com/cweill/gotests): t's a Golang commandline tool that generates table driven tests based on its target source files' function and method signatures.
+
+[Air](https://github.com/cosmtrek/air): Live reload for Go apps
+
+[Golines](https://github.com/segmentio/golines): Golines is a golang formatter that shortens long lines, in addition to all of the formatting fixes done by gofmt
+
+[Wails](https://github.com/wailsapp/wails): Build desktop applications using Go & Web Technologies
 
 ## VS Code
 
@@ -47,24 +88,3 @@ Validate and view JSON documents.
 - [OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall/related?hl=en): Whenever you find yourself with too many tabs, click the OneTab icon to convert all of your tabs into a list. 
 - [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=en): Advanced Eyedropper, Color Picker, Gradient Generator and other colorful goodies.
 - [AdBlock](https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom): Block ads and pop-ups on YouTube, Facebook, Twitch, and your favorite websites.
-
-## Utility Sites
-
-[Regex101](https://regex101.com/): A very intuitive online regular expression tool
-
-[JWT.IO](https://jwt.io/): JWT.IO allows you to decode, verify and generate JWT.
-
-[gitignore.io](https://www.gitignore.io/): Create useful .gitignore files for your project.
-
-[patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20): Text to ASCII Art Generator
-
-[vim-bootstrap](https://vim-bootstrap.com/): Your configuration generator for Neovim/Vim
-
-[JSON Crack](https://jsoncrack.com/): Seamlessly visualize your JSON data instantly into graphs.
-
-## Go
-
-[Gow](https://github.com/mitranim/gow): Go Watch: missing watch mode for the go command. It's invoked exactly like go, but also watches Go files and reruns on changes.
-
-[Gotests](https://github.com/cweill/gotests): t's a Golang commandline tool that generates table driven tests based on its target source files' function and method signatures.
-

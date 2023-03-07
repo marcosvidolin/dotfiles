@@ -32,46 +32,52 @@ set relativenumber
 "Plugins
 "
 call plug#begin()
- Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" svelte
-Plug 'leafOfTree/vim-svelte-plugin'
+ " LSP
+ " Plug 'neovim/nvim-lspconfig'
+ " Plug 'hrsh7th/nvim-compe' 
+ " Plug 'hrsh7th/vim-vsnip' 
+ " Plug 'hrsh7th/vim-vsnip-integ' 
 
-" typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+ " svelte
+ Plug 'leafOfTree/vim-svelte-plugin'
 
-"For Code
+ " typescript
+ Plug 'leafgarland/typescript-vim'
+ Plug 'HerringtonDarkholme/yats.vim'
+
+ "For Code
  Plug 'b3nj5m1n/kommentary'
  Plug 'AndrewRadev/splitjoin.vim'
  Plug 'dense-analysis/ale'
 
-"For project explporer 
+ "For project explporer 
  Plug 'preservim/nerdtree'
- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+ "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " For Barbar
 " Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'romgrk/barbar.nvim'
 
-"For Telescope
+ "For Telescope
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
-"For FZF
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+ "For FZF
+ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+ Plug 'junegunn/fzf.vim'
 
-"For Git Diff
-Plug 'nvim-lua/plenary.nvim'
-Plug 'sindrets/diffview.nvim'
-Plug 'tpope/vim-fugitive'
+ "For Git Diff
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'sindrets/diffview.nvim'
+ Plug 'tpope/vim-fugitive'
 
-"For TODO list
-Plug 'nvim-lua/plenary.nvim'
-Plug 'folke/todo-comments.nvim'
+ "For TODO list
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'folke/todo-comments.nvim'
 
-"For Theme, Icons and Colors 
+ "For Theme, Icons and Colors 
  Plug 'dracula/vim'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
@@ -112,12 +118,13 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports" 
 " Status line types/signatures (auto show GoInfo)
 let g:go_auto_type_info = 1
+let g:go_metalinter_autosave = 1
 
 " Enable lsp for go by using gopls
 let g:completor_filetype_map = {}
-let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}"
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}
 
-"" Go Add Tags
+" Go Add Tags
 let g:go_addtags_transform = 'camelcase'
 noremap gat :GoAddTags<cr>
 
@@ -143,7 +150,7 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 map <C-z> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
@@ -154,7 +161,8 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_skip_empty_sections = 1
-
+let g:airline_section_z = '' " replaces the line number percentage 33%  44: 2 (which I never use)
+let g:airline#extensions#branch#displayed_head_limit = 50
 
 " For TODO list Plugin
 lua << EOF
@@ -164,4 +172,19 @@ lua << EOF
     -- refer to the configuration section below
   }
 EOF
+
+" For Golines Plugin
+" https://github.com/segmentio/golines
+"--no-chain-split-dots
+let g:go_fmt_command = "golines"
+let g:go_fmt_options = {
+    \ 'golines': '-m 400',
+    \ }
+
+
+" Ale configuration
+let g:ale_linters = {
+  \ 'go': ['gopls'],
+  \}
+
 
