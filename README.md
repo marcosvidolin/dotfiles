@@ -64,10 +64,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 
 ### Intaling Plug Manager
 
-´´´shell
+```shell
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-´´´
+
 
 ## Utility Sites
 
