@@ -62,6 +62,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 ```
 
+### Intaling Plug Manager
+
+´´´shell
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+´´´
+
 ## Utility Sites
 
 [Regex101](https://regex101.com/): A very intuitive online regular expression tool
