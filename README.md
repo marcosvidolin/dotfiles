@@ -51,7 +51,7 @@ fortune | cowsay
 
 Have fun ✌🏼
 
-## Oh My Zsh
+### Oh My Zsh
 
 
 ```sh
