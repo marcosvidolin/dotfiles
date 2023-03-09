@@ -51,6 +51,17 @@ fortune | cowsay
 
 Have fun ✌🏼
 
+## Oh My Zsh
+
+
+```sh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
+
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+```
+
 ## Utility Sites
 
 [Regex101](https://regex101.com/): A very intuitive online regular expression tool
