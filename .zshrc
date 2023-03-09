@@ -113,8 +113,9 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-# for fun
-fortune | cowsay
+if [ -f ~/.workflow_aliases ]; then
+    . ~/.workflow_aliases
+fi
 
 # to configure the nvm environment variable
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -137,15 +138,27 @@ export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin/"
 
 export PATH=$PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin:$GOBIN
+export PATH=$PATH:$(go env GOPATH)/bin
 
-# Print versions
-ALIEN1='\U1F47E'
-ROBOT='\U1F916'
-ALIEN2='\U1F47D'
-echo
-printf "${ALIEN2} "
-go version
-printf "${ALIEN1} "
-nvm use v14
-printf "${ROBOT} "
-java -version
+# print just once in tmux session
+if [ "$TERM_PROGRAM" = "tmux" ]; then
+    # for fun
+    fortune | cowsay
+
+    # Print versions
+    ALIEN1='\U1F47E'
+    ROBOT='\U1F916'
+    ALIEN2='\U1F47D'
+    echo
+    printf "${ALIEN2} "
+    go version
+    printf "${ALIEN1} "
+    nvm use v14
+    printf "${ROBOT} "
+    java -version
+fi
+
+# pnpm
+export PNPM_HOME="/Users/vidolin/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
