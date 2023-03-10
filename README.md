@@ -67,7 +67,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 ```shell
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
+```
 
 ## Utility Sites
 
@@ -91,13 +91,31 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 ## Go
 
+[Staticcheck](https://github.com/dominikh/go-tools)
+
+```shell
+go install honnef.co/go/tools/cmd/staticcheck@latest
+```
+
 [Gow](https://github.com/mitranim/gow): Go Watch: missing watch mode for the go command. It's invoked exactly like go, but also watches Go files and reruns on changes.
+
+```shell
+go install github.com/mitranim/gow@latest
+```
 
 [Gotests](https://github.com/cweill/gotests): t's a Golang commandline tool that generates table driven tests based on its target source files' function and method signatures.
 
 [Air](https://github.com/cosmtrek/air): Live reload for Go apps
 
+```shell
+go install github.com/cosmtrek/air@latest
+```
+
 [Golines](https://github.com/segmentio/golines): Golines is a golang formatter that shortens long lines, in addition to all of the formatting fixes done by gofmt
+
+```shell
+go install github.com/segmentio/golines@latest
+```
 
 [Wails](https://github.com/wailsapp/wails): Build desktop applications using Go & Web Technologies
 
