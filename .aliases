@@ -19,4 +19,5 @@ alias scanf="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs
 alias checkout="git branch | fzf-tmux -p --reverse | xargs git checkout"
 
 # git: removes all merged branches (ignore importante ones)
-alias gitrm="git branch --merged | egrep -v "(^\*|master|main|development)" | xargs git branch -D"
+alias gitrm="git branch --merged | egrep -v '(\*|master|main|development|develop)' | xargs -I % sh -c 'echo deleting branch %; git branch -D %;'"
+
