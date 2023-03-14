@@ -84,6 +84,12 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 go install github.com/mitranim/gow@latest
 ```
 
+[Gotestsum](https://github.com/gotestyourself/gotestsum)
+
+```shell
+go install gotest.tools/gotestsum@latest
+```
+
 [Gotests](https://github.com/cweill/gotests): t's a Golang commandline tool that generates table driven tests based on its target source files' function and method signatures.
 
 ```shell
