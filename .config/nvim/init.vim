@@ -55,7 +55,7 @@ call plug#begin()
 
  "For project explporer 
  Plug 'preservim/nerdtree'
- "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+ " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " For Barbar
 " Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'romgrk/barbar.nvim'
@@ -88,6 +88,11 @@ call plug#begin()
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
  Plug 'bluz71/vim-moonfly-colors'
  Plug 'airblade/vim-gitgutter'
+
+ "Code sneepts
+ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+ 
+ 
 call plug#end()
 
 if (has("termguicolors"))
