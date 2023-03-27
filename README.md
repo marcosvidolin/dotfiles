@@ -63,11 +63,21 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 ```
 
-### VIM Plug Manager
+## VIM 
+
+### Plug Manager
 
 ```shell
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+### Go Language Server
+
+To enable Go language server in nvim-coc, you need to install the coc-go extension by running the following command in your terminal:
+
+```shell
+:CocInstall coc-go
 ```
 
 ## Go
