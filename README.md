@@ -80,7 +80,7 @@ To enable Go language server in nvim-coc, you need to install the coc-go extensi
 :CocInstall coc-go
 ```
 
-Check if everything is fine:
+### Check if everything is fine:
 
 ```shell
 :checkhealth
