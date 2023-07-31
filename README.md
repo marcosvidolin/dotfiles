@@ -126,6 +126,12 @@ go install github.com/segmentio/golines@latest
 
 [Wails](https://github.com/wailsapp/wails): Build desktop applications using Go & Web Technologies
 
+## Utilit Tools
+
+### Mac
+
+- [Hand Mirror](https://apps.apple.com/us/app/hand-mirror/id1502839586?mt=12): One-click camera check
+
 ## VS Code
 
 ### Extensions
