@@ -7,7 +7,7 @@ My custom environment: plugins and tools
 ### iTerm2
 
 ```shell
-brew cask install iterm2
+brew install --cask iterm2
 ```
 
 Auto-Starting Tmux in iTerm2
