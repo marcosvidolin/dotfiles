@@ -10,6 +10,13 @@ My custom environment: plugins and tools
 brew install --cask iterm2
 ```
 
+Install Nerd Font
+
+```shell
+brew tap homebrew/cask-fonts
+brew cask install font-hack-nerd-font
+```
+
 Auto-Starting Tmux in iTerm2
 
 - Send text at start:
