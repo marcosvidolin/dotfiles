@@ -75,6 +75,5 @@
 
     "typescript.tsserver.log": "verbose",
     "javascript.suggest.autoImports": false,
-    "typescript.suggest.autoImports": false,
-    "workbench.activityBar.visible": true
+    "typescript.suggest.autoImports": false
 }
