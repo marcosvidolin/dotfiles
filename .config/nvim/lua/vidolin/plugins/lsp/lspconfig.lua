@@ -76,6 +76,12 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure Terraform server
+    lspconfig["terraformls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure html server
     lspconfig["html"].setup({
       capabilities = capabilities,

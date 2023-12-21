@@ -40,7 +40,7 @@ require('lazy').setup({
   'ThePrimeagen/git-worktree.nvim',
   'tpope/vim-surround',
   'xiyaowong/nvim-transparent',
-  { 
+  {
     'numToStr/FTerm.nvim',
     config = function()
     local map = vim.api.nvim_set_keymap
@@ -114,7 +114,7 @@ require('lazy').setup({
         background_colour = "#000000",
       })
     end
-  },   
+  },
 
   {
     "folke/noice.nvim",
@@ -183,9 +183,9 @@ require('lazy').setup({
   { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
 
   -- Navigation
-  {'preservim/nerdtree', 
+  {'preservim/nerdtree',
     dependencies = {
-      "Xuyuanp/nerdtree-git-plugin", 
+      "Xuyuanp/nerdtree-git-plugin",
       "ryanoasis/vim-devicons"
     }
   },

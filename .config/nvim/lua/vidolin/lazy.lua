@@ -23,3 +23,7 @@ require("lazy").setup({ { import = "vidolin.plugins" }, { import = "vidolin.plug
     notify = false,
   },
 })
+
+ require('dapui').setup()
+ require("nvim-dap-virtual-text").setup()
+ require('dap-go').setup()

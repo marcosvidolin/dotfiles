@@ -6,4 +6,5 @@ return {
     "christoomey/vim-tmux-navigator", -- tmux & split window navigation
     "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
     "charlespascoe/vim-go-syntax", -- syntax highlighting
+    { "junegunn/fzf", build = "./install --bin" },
 }
