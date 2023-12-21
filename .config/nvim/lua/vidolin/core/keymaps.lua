@@ -55,3 +55,8 @@ keymap.set("n", "<leader>dso", ":DapStepOver<CR>", {noremap=true, desc = "DapSte
 -- Git
 keymap.set("n", "<leader>gc", ":Git commit -m \"", {noremap=false})
 keymap.set("n", "<leader>gp", ":Git push -u origin HEAD<CR>", {noremap=false})
+--
+-- Fterm
+vim.api.nvim_set_keymap("n", "<leader>tt", ":lua require('FTerm').toggle()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("t", "<leader>tt", '<C-\\><C-n>:lua require("FTerm").toggle()<CR>', {noremap=true})
+
