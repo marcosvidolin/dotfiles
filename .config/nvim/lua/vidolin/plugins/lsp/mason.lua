@@ -51,7 +51,7 @@ return {
         "pylint", -- python linter
         "eslint_d", -- js linter
         "tflint", -- tf linter
-        -- "golangci_lint_ls", -- commented to not confict with vim-go on imports
+        "golangci_lint_ls", -- commented to not confict with vim-go on imports
       },
     })
   end,
