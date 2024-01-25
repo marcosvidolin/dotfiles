@@ -17,7 +17,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     -- require('go.format').goimport()-- Commented because I already have it using vim-go
    -- require('go.format').gofmt()
   end,
-  group = format_sync_grp,
 })
 
 vim.fn.sign_define('DapBreakpoint', { text='🔴', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })

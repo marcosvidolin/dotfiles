@@ -7,4 +7,10 @@ return {
     "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
     "charlespascoe/vim-go-syntax", -- syntax highlighting
     { "junegunn/fzf", build = "./install --bin" },
+    {
+      "norcalli/nvim-colorizer.lua",
+      config = function ()
+        require'colorizer'.setup()
+      end
+    }
 }
