@@ -17,9 +17,9 @@ opt.number = true -- shows absolute line number on cursor line (when relative nu
 
 -- tabs & indentation
 opt.tabstop = 4       -- number of columns occupied by a tab 
-opt.softtabstop = 4   -- see multiple spaces as tabstops so <BS> does the right thing
+opt.softtabstop = 2   -- see multiple spaces as tabstops so <BS> does the right thing
 opt.expandtab = true  -- converts tabs to white space
-opt.shiftwidth = 4    -- width for autoindents
+opt.shiftwidth = 2    -- width for autoindents
 opt.autoindent = true -- copy indent from current line when starting new one
 
 -- vim.o.syntax = "ON"                -- str:  Allow syntax highlighting

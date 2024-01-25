@@ -15,7 +15,15 @@ return {
     local keymap = vim.keymap -- for conciseness
 
     local opts = { noremap = true, silent = true }
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_, bufnr)
+
+      require "lsp_signature".on_attach({
+        bind = true, -- This is mandatory, otherwise border config won't get registered.
+        handler_opts = {
+          border = "rounded"
+        }
+      }, bufnr)
+
       opts.buffer = bufnr
 
       -- set keybinds
@@ -57,6 +65,17 @@ return {
 
       opts.desc = "Restart LSP"
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+      opts.desc = "toogle signature"
+      keymap.set({ 'n' }, '<C-k>', function()
+        require('lsp_signature').toggle_float_win()
+      end, opts)
+
+      opts.desc = "toogle signature"
+      keymap.set({ 'n' }, '<Leader>k', function()
+       vim.lsp.buf.signature_help()
+      end, opts)
+
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
