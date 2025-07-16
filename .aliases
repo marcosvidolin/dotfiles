@@ -1,12 +1,10 @@
 # custom aliases
 
-# nvim
+alias ll="ls -al"
 alias nv="nvim"
-alias myip="curl ifconfig.me" # to get my external IP
-
-# go test
-alias gotest="gotestsum"
-#alias gotest="go test -json -v ./... 2>&1 | tee /tmp/gotest.log | gotestfmt"
+alias nvimrc="nvim ~/.config/nvim"
+alias ws="cd ~/workspace/"
+alias zshrc="nvim ~/.zshrc"
 
 # drop down menu to search files
 alias scanf="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
@@ -17,20 +15,53 @@ alias checkout="git branch | fzf-tmux -p --reverse | xargs git checkout"
 # git: removes all merged branches (ignore importante ones)
 alias gitrm="git branch --merged | egrep -v '(\*|master|main|development|develop)' | xargs -I % sh -c 'echo deleting branch %; git branch -D %;'"
 
-# k8s all pod logs
+# k8s logs
 alias alogs="kubectl get pods -n backend -o name | xargs -I {} kubectl logs -n backend --all-containers {}"
 
-# drp down menu to list projects
-projects() {
-  local workspace=~/workspace
+# Jump to a project directory and open in Neovim
+jump() {
+  local category="$1"
+  local workspace=~/workspace/$category
   local selected
 
-  # List directories, select one with fzf
+  # Check if the directory exists
+  if [[ ! -d "$workspace" ]]; then
+    echo "Error: Workspace '$workspace' not found"
+    return 1
+  fi
+
+  # Select a directory using fzf
   selected=$(cd "$workspace" && find . -maxdepth 1 -type d | sed "s|^\./||" | fzf-tmux -p --reverse)
 
-  # If a selection was made, change directory and open nvim
+  # If a selection was made, change directory and open Neovim
   if [[ -n "$selected" ]]; then
     cd "$workspace/$selected" || return
     nvim .
   fi
+}
+
+# Shortcuts for different categories
+alias backend='jump backend'
+alias frontend='jump frontend'
+alias mobile='jump mobile'
+alias devops='jump devops'
+
+#
+# TOOLS
+#
+
+# Generates an UUID and Copy it on the clipboard
+alias uuid='uuid=$(uuidgen | tr "[:upper:]" "[:lower:]") && echo -n "$uuid" | pbcopy && echo "UUID $uuid copied to clipboard."'
+
+# to get my external IP
+alias myip="curl ifconfig.me"
+
+# base64
+b64() {
+  # echo -n "$1" | base64 | pbcopy && echo "base64 result $1 copied to clipboard."
+  echo -n "$1" | base64 -b 0 | pbcopy && echo "base64 result $1 copied to clipboard."
+}
+
+b64d() {
+  echo -n "$1" | base64 -d
 }
