@@ -35,12 +35,11 @@ return {
 
                 -- Actions
                 local keymap = vim.keymap -- for conciseness
-                keymap.set('n', '<leader>hp', gs.preview_hunk, { desc = "Gitsigns preview_hunk" })
-                keymap.set('n', '<leader>hn', gs.next_hunk, { desc = "Gitsigns next_hunk" })
-                keymap.set('n', '<leader>hb', function() gs.blame_line{full=true} end, { desc = "Gitsigns blame_line" })
-                keymap.set('n', '<leader>hl', gs.toggle_current_line_blame, { desc = "Gitsigns toggle_current_line_blame" })
-                keymap.set('n', '<leader>hd', gs.diffthis, { desc = "Gitsigns diffthis" })
-                keymap.set('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "Gitsigns diffthis ~" })
+                keymap.set('n', '<leader>gk', gs.prev_hunk, { desc = "Gitsigns prev_hunk" })
+                keymap.set('n', '<leader>gj', gs.next_hunk, { desc = "Gitsigns next_hunk" })
+                keymap.set('n', '<leader>gl', function() gs.blame_line{full=true} end, { desc = "Gitsigns blame_line" })
+                keymap.set('n', '<leader>gd', gs.diffthis, { desc = "Gitsigns diffthis" })
+                keymap.set('n', '<leader>gD', function() gs.diffthis('~') end, { desc = "Gitsigns diffthis ~" })
 
                 -- Text object
                 map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')

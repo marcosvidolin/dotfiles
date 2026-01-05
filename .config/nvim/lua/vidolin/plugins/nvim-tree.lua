@@ -32,7 +32,7 @@ return {
       end,
       view = {
         width = 35,
-        relativenumber = true,
+        relativenumber = false,
         adaptive_size = false,
       },
       -- change folder arrow icons

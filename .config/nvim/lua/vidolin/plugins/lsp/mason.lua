@@ -9,7 +9,7 @@ return {
 		local mason = require("mason")
 
 		-- import mason-lspconfig
-		local mason_lspconfig = require("mason-lspconfig")
+		-- local mason_lspconfig = require("mason-lspconfig")
 
 		local mason_tool_installer = require("mason-tool-installer")
 
@@ -24,10 +24,9 @@ return {
 			},
 		})
 
-		mason_lspconfig.setup({
-			-- list of servers for mason to install
+		mason_tool_installer.setup({
 			ensure_installed = {
-				"tsserver",
+				"ts_ls",
 				"html",
 				"cssls",
 				"lua_ls",
@@ -37,14 +36,7 @@ return {
 				"dockerls",
 				"docker_compose_language_service",
 				"bashls",
-                "rust_analyzer",
-			},
-			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true, -- not the same as ensure_installed
-		})
-
-		mason_tool_installer.setup({
-			ensure_installed = {
+				--
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
@@ -54,6 +46,7 @@ return {
 				"tflint", -- tf linter
 				"golangci_lint_ls", -- commented to not confict with vim-go on imports
 				"staticcheck",
+				"sql-formatter",
 			},
 		})
 	end,

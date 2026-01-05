@@ -50,11 +50,12 @@ keymap.set("n", "<leader>dc", ":DapContinue<CR>", {noremap=true, desc = "DapCont
 keymap.set("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", {noremap=true, desc = "Dap UI Reset"})
 keymap.set("n", "<leader>ds", ":DapStop<CR>", {noremap=true, desc = "DapStop"})
 keymap.set("n", "<leader>dt", ":DapTerminate<CR>", {noremap=true, desc = "DapTerminate"})
-keymap.set("n", "<leader>dso", ":DapStepOver<CR>", {noremap=true, desc = "DapStepOver"})
+keymap.set("n", "<leader>do", ":DapStepOver<CR>", {noremap=true, desc = "DapStepOver"})
 
 -- Git
-keymap.set("n", "<leader>gc", ":Git commit -m \"", {noremap=false})
-keymap.set("n", "<leader>gp", ":Git push -u origin HEAD<CR>", {noremap=false})
+-- also see keymaps at ../plugins/gitsigns.lua
+keymap.set("n", "<leader>gC", ":Git commit -m \"", {noremap=false})
+keymap.set("n", "<leader>gP", ":Git push -u origin HEAD<CR>", {noremap=false})
 --
 -- Fterm
 vim.api.nvim_set_keymap("n", "<leader>tt", ":lua require('FTerm').toggle()<CR>", {noremap=true})
