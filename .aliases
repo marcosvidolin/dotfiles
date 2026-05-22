@@ -45,23 +45,155 @@ alias backend='jump backend'
 alias frontend='jump frontend'
 alias mobile='jump mobile'
 alias devops='jump devops'
+alias lambda='jump lambda'
+
+alias rabbit='~/tools/rabbitmqadmin'
 
 #
 # TOOLS
 #
 
+# My IP
+alias myip="curl ipconfig.me"
+
 # Generates an UUID and Copy it on the clipboard
 alias uuid='uuid=$(uuidgen | tr "[:upper:]" "[:lower:]") && echo -n "$uuid" | pbcopy && echo "UUID $uuid copied to clipboard."'
 
-# to get my external IP
-alias myip="curl ifconfig.me"
-
 # base64
+# encode
 b64() {
-  # echo -n "$1" | base64 | pbcopy && echo "base64 result $1 copied to clipboard."
   echo -n "$1" | base64 -b 0 | pbcopy && echo "base64 result $1 copied to clipboard."
 }
-
+# decode
 b64d() {
   echo -n "$1" | base64 -d
 }
+
+#
+# k8s
+#
+k8s() {
+  case "$1" in
+    contexts)
+      # interactive kubectl context picker using fzf
+      context=$(kubectl config get-contexts --output=name | fzf)
+      if [ -n "$context" ]; then
+        kubectl config use-context "$context"
+      else
+        echo "No context selected."
+      fi
+      ;;
+    replicas)
+      # Select a deployment (not pods)
+      deployment=$(kubectl get deployments -n backend -o name | fzf)
+      if [ -z "$deployment" ]; then
+        echo "No deployment selected."
+        return
+      fi
+
+      if [ -z "$2" ]; then
+        echo "Error: replicas value required."
+        echo "Usage: k8s replicas <number>"
+        return 1
+      fi
+
+      # Correct: deployment already includes "deployment/<name>"
+      kubectl scale "$deployment" --replicas="$2" -n backend
+      ;;
+
+    pods)
+      # List pods in backend namespace
+      kubectl get pods -n backend
+      ;;
+      
+    bash)
+      # fzf choose pod and exec bash
+      pod=$(kubectl get pods -n backend -o name | fzf)
+      if [ -z "$pod" ]; then
+        echo "No pod selected."
+        return
+      fi
+
+      kubectl exec -it -n backend "$pod" -- bash || \
+      kubectl exec -it -n backend "$pod" -- sh
+      ;;
+
+    logs)
+      # fzf choose pod and stream logs
+      pod=$(kubectl get pods -n backend -o name | fzf)
+      if [ -z "$pod" ]; then
+        echo "No pod selected."
+        return
+      fi
+
+      kubectl logs -n backend "$pod" -f
+      ;;
+
+    *)
+      echo "Usage: k8s {contexts|pods|bash|logs|replicas}"
+      ;;
+  esac
+}
+
+# Daily log file: commits-YYYYMMDD.log (path will be generated dynamically)
+git() {
+  # Intercept only commit commands
+  if [[ "$1" = "commit" ]]; then
+    # Extract the commit message from -m "<message>"
+    commit_msg=""
+    next_is_msg=0
+    for i in "$@"; do
+      if [[ "$i" == "-m" ]]; then
+        next_is_msg=1
+      elif [[ $next_is_msg == 1 ]]; then
+        commit_msg="$i"
+        next_is_msg=0
+      fi
+    done
+
+    # Run the actual git command
+    command git "$@"
+    status=$?
+
+    # Only log if the commit was successful and message exists
+    if [[ $status -eq 0 && -n "$commit_msg" ]]; then
+      # Remove surrounding quotes if present
+      clean_msg="${commit_msg%\"}"
+      clean_msg="${clean_msg#\"}"
+
+      # Get repo root and name
+      repo_root=$(command git rev-parse --show-toplevel 2>/dev/null)
+      repo_name=""
+      if [[ -n "$repo_root" ]]; then
+        repo_name=$(basename "$repo_root")
+      else
+        repo_name="(not a repo)"
+      fi
+
+      # Determine category based on path
+      category="other"
+      if [[ "$repo_root" == *"backend"* ]]; then
+        category="backend"
+      elif [[ "$repo_root" == *"devops"* ]]; then
+        category="devops"
+      fi
+
+      # Generate log file path dynamically with current date
+      log_file="$HOME/commits-$(date '+%Y%m%d').log"
+
+      # Actually write to the log file (make sure HOME is set and file is writable)
+      log_line="$(date '+%Y-%m-%d %H:%M:%S') | $category | $repo_name | $clean_msg"
+      # Try to write; show error if failed
+      echo "$log_line" >> "$log_file" 2>/dev/null
+      if [[ $? -ne 0 ]]; then
+        echo "Warning: Failed to write to log file: $log_file" >&2
+      fi
+    fi
+
+    return $status
+  fi
+
+  # For all other git commands, just run normally
+  command git "$@"
+}
+

@@ -1,0 +1,7 @@
+require("vidolin.core.keymaps")
+require("vidolin.core.options")
+require("vidolin.core.lsp_compat")
+require("vidolin.core.misc")
+require("vidolin.core.vidolin")
+require("vidolin.core.filetypes")
+require("vidolin.core.treesitter_compat")

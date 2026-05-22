@@ -75,10 +75,5 @@
 
     "typescript.tsserver.log": "verbose",
     "javascript.suggest.autoImports": false,
-    "typescript.suggest.autoImports": false,
-    "[javascript][javascriptreact][typescript][typescriptreact]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": "explicit"
-        }
-    }
+    "typescript.suggest.autoImports": false
 }
