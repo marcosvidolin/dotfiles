@@ -6,7 +6,10 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   config = function()
-    require("go").setup()
+    require("go").setup({
+      -- LSP is managed in `lua/gverse/plugins/lsp/lspconfig.lua`
+      lsp_cfg = false,
+    })
   end,
   event = {"CmdlineEnter"},
   ft = {"go", 'gomod'},

@@ -11,11 +11,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "vidolin.plugins" }, { import = "vidolin.plugins.lsp" } }, {
+require("lazy").setup({ { import = "gverse.plugins" }, { import = "gverse.plugins.lsp" } }, {
   install = {
     -- check the ´`colorscheme.lua` to configure the default by adding the `vim.cmd([[colorscheme oxocarbon]])`
     -- you can also change the colorscheme on vim using `:colorscheme´` + <tab> to see the options
     colorscheme = { "modus", "oxocarbon", "catppuccin" },
+  },
+  rocks = {
+    enabled = false,
   },
   checker = {
     enabled = true,
@@ -25,10 +28,3 @@ require("lazy").setup({ { import = "vidolin.plugins" }, { import = "vidolin.plug
     notify = false,
   },
 })
-
-require("dapui").setup()
-require("nvim-dap-virtual-text").setup()
-require("dap-go").setup()
--- Load project-specific DAP config (adapters, UI listeners, launch.json handling)
-pcall(require, "vidolin.core.dap-config")
-require("vidolin.core.dap-config")

@@ -14,6 +14,14 @@ return {
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
+		vim.api.nvim_set_hl(0, "CmpBorder", { link = "DiagnosticInfo" })
+		vim.api.nvim_set_hl(0, "CmpPmenu", { link = "Pmenu" })
+
+		local bordered_window_opts = {
+			border = "rounded",
+			winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
+		}
+
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -27,8 +35,8 @@ return {
 				end,
 			},
 			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
+				completion = cmp.config.window.bordered(bordered_window_opts),
+				documentation = cmp.config.window.bordered(bordered_window_opts),
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion

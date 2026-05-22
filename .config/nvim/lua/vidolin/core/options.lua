@@ -1,5 +1,15 @@
 local opt = vim.opt -- for conciseness
 
+-- Providers (optional). Disable to silence `:checkhealth` warnings unless you
+-- use remote plugins that require them.
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+
+-- nvim-ts-context-commentstring: avoid loading the deprecated nvim-treesitter
+-- `context_commentstring` module (it will be removed upstream).
+vim.g.skip_ts_context_commentstring_module = true
+
 -- Folding / Unfolding (za)
 vim.cmd("set foldmethod=indent")
 vim.cmd("set foldlevel=20")

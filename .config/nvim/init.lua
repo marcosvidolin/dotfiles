@@ -1,2 +1,2 @@
-require("vidolin.core")
-require("vidolin.lazy")
+require("gverse.core")
+require("gverse.lazy")

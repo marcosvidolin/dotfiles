@@ -96,6 +96,11 @@ return {
 			on_attach = on_attach,
 		}
 
+		vim.lsp.config["ts_ls"] = {
+			capabilities = capabilities,
+			on_attach = on_attach,
+		}
+
 		vim.lsp.config["lua_ls"] = {
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -130,6 +135,7 @@ return {
 		enable_lsp_autostart("html", { "html" })
 		enable_lsp_autostart("cssls", { "css", "scss", "less" })
 		enable_lsp_autostart("pyright", { "python" })
+		enable_lsp_autostart("ts_ls", { "typescript", "typescriptreact", "javascript", "javascriptreact" })
 		enable_lsp_autostart("lua_ls", { "lua" })
 	end,
 }
