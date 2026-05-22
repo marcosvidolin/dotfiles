@@ -8,7 +8,7 @@ return {
       "nvim-neotest/nvim-nio",
     },
     config = function()
-      require("gverse.core.dap-config")
+      require("vidolin.core.dap-config")
     end,
   },
 

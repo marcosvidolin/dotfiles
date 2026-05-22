@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal Neovim configuration named `gverse`. Entry point is `init.lua`, which bootstraps `gverse.core` (settings, keymaps, misc) then `gverse.lazy` (plugin manager). Plugin manager is **lazy.nvim** (stable branch), auto-installed on first launch.
+Personal Neovim configuration named `vidolin`. Entry point is `init.lua`, which bootstraps `vidolin.core` (settings, keymaps, misc) then `vidolin.lazy` (plugin manager). Plugin manager is **lazy.nvim** (stable branch), auto-installed on first launch.
 
 Leader key: `<Space>`
 
@@ -12,8 +12,8 @@ Leader key: `<Space>`
 
 ```
 init.lua                          # Requires core + lazy
-lua/gverse/
-  lazy.lua                        # lazy.nvim bootstrap; imports gverse.plugins + gverse.plugins.lsp
+lua/vidolin/
+  lazy.lua                        # lazy.nvim bootstrap; imports vidolin.plugins + vidolin.plugins.lsp
   core/
     init.lua                      # Requires all core modules in order
     options.lua                   # vim.opt settings (tabs, search, clipboard, folding)
@@ -49,7 +49,7 @@ lua/gverse/
 
 **LSP wiring**: servers are configured via `vim.lsp.config[name]` (nvim 0.11+ native API), not `lspconfig.setup()`. Each server is started with a `FileType` autocmd in `lspconfig.lua`. Mason handles binary installation separately.
 
-**DAP + env loading**: `dap-config.lua` reads `.vscode/launch.json` when present and merges all `.env*` files from cwd into the debug env via `gverse.core.env`. Falls back to `dap-go` defaults when no launch.json exists. Reloads on `DirChanged`.
+**DAP + env loading**: `dap-config.lua` reads `.vscode/launch.json` when present and merges all `.env*` files from cwd into the debug env via `vidolin.core.env`. Falls back to `dap-go` defaults when no launch.json exists. Reloads on `DirChanged`.
 
 **Formatting**: `none-ls.nvim` (null-ls fork) provides formatting via `<leader>gf`. Active formatters: stylua (Lua), prettier (JS/TS/CSS/HTML), sql-formatter.
 
@@ -66,7 +66,7 @@ Linters: `pylint`, `eslint_d`, `tflint`
 
 ## Adding a new plugin
 
-Create `lua/gverse/plugins/myplugin.lua` returning a lazy.nvim spec table. It will be auto-imported by the `{ import = "gverse.plugins" }` line in `lazy.lua`. For LSP-related plugins, put them in `lua/gverse/plugins/lsp/`.
+Create `lua/vidolin/plugins/myplugin.lua` returning a lazy.nvim spec table. It will be auto-imported by the `{ import = "vidolin.plugins" }` line in `lazy.lua`. For LSP-related plugins, put them in `lua/vidolin/plugins/lsp/`.
 
 ## Adding a new LSP server
 

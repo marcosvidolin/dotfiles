@@ -1,7 +1,7 @@
 local dap = require("dap")
 local dapgo = require("dap-go")
 local dapui = require("dapui")
-local envmod = require("gverse.core.env")
+local envmod = require("vidolin.core.env")
 
 -- Open/close DAP UI automatically
 dap.listeners.after.event_initialized["dapui_config"] = function()

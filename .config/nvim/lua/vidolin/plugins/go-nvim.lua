@@ -7,7 +7,7 @@ return {
   },
   config = function()
     require("go").setup({
-      -- LSP is managed in `lua/gverse/plugins/lsp/lspconfig.lua`
+      -- LSP is managed in `lua/vidolin/plugins/lsp/lspconfig.lua`
       lsp_cfg = false,
     })
   end,

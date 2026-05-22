@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "gverse.plugins" }, { import = "gverse.plugins.lsp" } }, {
+require("lazy").setup({ { import = "vidolin.plugins" }, { import = "vidolin.plugins.lsp" } }, {
   install = {
     -- check the ´`colorscheme.lua` to configure the default by adding the `vim.cmd([[colorscheme oxocarbon]])`
     -- you can also change the colorscheme on vim using `:colorscheme´` + <tab> to see the options

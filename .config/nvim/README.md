@@ -1,4 +1,4 @@
-# Neovim config (`gverse`)
+# Neovim config (`vidolin`)
 
 Leader key: `<Space>`
 
